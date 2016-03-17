@@ -16,7 +16,7 @@ import java.util.List;
  * Created by ankle on 16/1/29.
  */
 @SuppressWarnings("unused")
-public class TabViews extends LinearLayout {
+public class NavigationViews extends LinearLayout {
 
     private Context mContext;
 
@@ -24,15 +24,15 @@ public class TabViews extends LinearLayout {
 
     private OnTabClickListener onTabClickListener;
 
-    public TabViews(Context context) {
+    public NavigationViews(Context context) {
         this(context, null);
     }
 
-    public TabViews(Context context, AttributeSet attrs) {
+    public NavigationViews(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public TabViews(Context context, AttributeSet attrs, int defStyleAttr) {
+    public NavigationViews(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
