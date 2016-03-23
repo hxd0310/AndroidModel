@@ -22,7 +22,7 @@ public class NavigationViews extends LinearLayout {
 
     private List<View> mViews;
 
-    private OnTabClickListener onTabClickListener;
+    private OnNavigationClickListener onNavigationClickListener;
 
     public NavigationViews(Context context) {
         this(context, null);
@@ -69,8 +69,8 @@ public class NavigationViews extends LinearLayout {
             view.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(null !=  onTabClickListener) {
-                        onTabClickListener.onClickTab(v, (int) v.getTag());
+                    if(null !=  onNavigationClickListener) {
+                        onNavigationClickListener.onNavigationClick(v, (int) v.getTag());
                     }
                 }
             });
@@ -108,12 +108,12 @@ public class NavigationViews extends LinearLayout {
         addViews();
     }
 
-    public void setOnTabClickListener (OnTabClickListener onTabClickListener) {
-        this.onTabClickListener = onTabClickListener;
+    public void setOnNavigationClickListener (OnNavigationClickListener onNavigationClickListener) {
+        this.onNavigationClickListener = onNavigationClickListener;
     }
 
-    public interface OnTabClickListener {
-        void onClickTab(View v, int position);
+    public interface OnNavigationClickListener {
+        void onNavigationClick(View v, int position);
     }
 
 }

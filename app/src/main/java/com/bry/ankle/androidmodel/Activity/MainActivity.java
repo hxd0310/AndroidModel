@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        addTabViews();
+        addNavigationViews();
     }
 
-    private void addTabViews() {
+    private void addNavigationViews() {
         NavigationViews navigationViews = (NavigationViews) findViewById(R.id.navigation_views);
         List<View> textViews = new ArrayList<>();
         for(int i = 0; i < 4; i++) {
@@ -38,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         navigationViews.addViews(textViews);
+        navigationViews.setOnNavigationClickListener(new NavigationViews.OnNavigationClickListener() {
+            @Override
+            public void onNavigationClick(View v, int position) {
+                start();
+            }
+        });
+    }
+
+    private void start() {
+        NavigationBarActivity.startActivity(this, null);
     }
 
 }
